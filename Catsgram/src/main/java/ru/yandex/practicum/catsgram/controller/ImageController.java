@@ -1,7 +1,6 @@
 package ru.yandex.practicum.catsgram.controller;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -14,7 +13,7 @@ import java.util.List;
 @RestController
 @RequiredArgsConstructor
 public class ImageController {
-    private final ImageService imageService;
+    private ImageService imageService;
 
     @GetMapping("/posts/{postId}/images")
     public List<Image> getPostImages(@PathVariable("postId") long postId) {

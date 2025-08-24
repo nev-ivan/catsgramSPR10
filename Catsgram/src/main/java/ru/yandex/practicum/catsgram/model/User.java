@@ -6,6 +6,7 @@ import java.time.Instant;
 
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 @EqualsAndHashCode(of = { "email" })
 public class User {
     private Long id;

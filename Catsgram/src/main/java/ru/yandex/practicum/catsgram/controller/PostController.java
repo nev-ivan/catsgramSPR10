@@ -1,5 +1,6 @@
 package ru.yandex.practicum.catsgram.controller;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import ru.yandex.practicum.catsgram.model.Post;
@@ -9,12 +10,9 @@ import java.util.Collection;
 
 @RestController
 @RequestMapping
+@RequiredArgsConstructor
 public class PostController {
     PostService postService;
-
-    public PostController(PostService postService) {
-        this.postService = postService;
-    }
 
     @GetMapping("/posts")
     public Collection<Post> findAll(@RequestParam(defaultValue = "10") int size,
